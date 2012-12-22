@@ -59,7 +59,8 @@ function GridView(cloud, ctx) {
 
 GridView.prototype.maxWidth = function(){
   return max(this.browsers, function(b){
-    return Math.max(b.browserName.length, b.platform.length)
+    // +1 to account for space character
+    return Math.max(b.browserName.length + b.version.length + 1, b.platform.length)
   });
 };
 
